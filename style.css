@@ -23,12 +23,19 @@ header ul li a{
     color: #776871;
     text-decoration: none;
 }
-.logo, .logo-scan{
+.logo, .logo-scan, .logo-home{
     color: #776871;
     text-decoration: none;
     font-size: 2em;
 }
 .logo-scan{
+    border: 4px solid #91a8a4;
+    border-radius: 5px;
+    height: fit-content;
+    width: fit-content;
+    padding: 0px 50px;
+}
+.logo-home{
     border: 4px solid #91a8a4;
     border-radius: 5px;
     height: fit-content;
