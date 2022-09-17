@@ -71,3 +71,6 @@ header ul li a{
     cursor: pointer;
     background-color: #776871;
 }
+.ch2, .ch3, .ch4, .ch5, .ch6{
+    display: none;
+}

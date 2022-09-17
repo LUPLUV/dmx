@@ -13,37 +13,64 @@
         <a href="" class="logo">DMX Console</a>
         <a href="" class="logo-scan">Add Scan File</a>
         <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="patch/">Patch</a></li>
-            <li><a href="config/">Config</a></li>
-            <li><a href="scan/">Scan</a></li>
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../patch/">Patch</a></li>
+            <li><a href="../../config/">Config</a></li>
+            <li><a href="../../scan/">Scan</a></li>
         </ul>
     </header>
     <div class="main main-scan-add">
         <form action="create.html" class="new-scan-form">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" required placeholder="MH-x250">
+            <br>
+            <label for="brand">Brand:</label>
+            <input type="text" id="brand" name="brand" required placeholder="Stairville">
             <br>
             <label for="ch">Channel Amount:</label>
-            <input type="number" id="ch" name="ch">
+            <input type="number" id="ch" name="ch" required placeholder="4">
             <br>
             <label for="ch1">Channel 1:</label>
-            <input type="text" id="ch1" name="ch1">
+            <input type="text" id="ch1" name="ch1" required placeholder="pan">
             <br>
-            <label for="ch2">Channel 2:</label>
-            <input type="text" id="ch2" name="ch2">
+            <label for="ch2" class="ch2">Channel 2:</label>
+            <input type="text" id="ch2" name="ch2" class="ch2" placeholder="tilt">
             <br>
-            <label for="ch3">Channel 3:</label>
-            <input type="text" id="ch3" name="ch3">
+            <label for="ch3" class="ch3">Channel 3:</label>
+            <input type="text" id="ch3" name="ch3" class="ch3" placeholder="dimmer">
             <br>
-            <label for="ch4">Channel 4:</label>
-            <input type="text" id="ch4" name="ch4">
+            <label for="ch4" class="ch4">Channel 4:</label>
+            <input type="text" id="ch4" name="ch4" class="ch4" placeholder="red">
             <br>
-            <label for="ch5">Channel 5:</label>
-            <input type="text" id="ch5" name="ch5">
+            <label for="ch5" class="ch5">Channel 5:</label>
+            <input type="text" id="ch5" name="ch5" class="ch5" placeholder="green">
+            <br>
+            <label for="ch6" class="ch6">Channel 6:</label>
+            <input type="text" id="ch6" name="ch6" class="ch6" placeholder="blue">
+            <br>
+            <button type="button" class="new-scan-form-create-btn" onclick="addChannel();">Add Channel <i class='bx bx-add-to-queue'></i></button>
             <br>
             <button type="submit" class="new-scan-form-create-btn">Create</button>
         </form>
     </div>
+    <script>
+        function addChannel(){
+            var className;
+            for (var i = 2; i < 40; i++){
+                var elements = document.getElementsByClassName('ch' + i);
+                var requiredElement = elements[0];
+                if(!requiredElement.style.getPropertyValue("display").includes("inline-block")){
+                    className = "ch" + i;
+                    break;
+                }
+            }
+            var elems = document.getElementsByClassName(className),
+                size = elems.length;
+            for (var i = 0; i < size; i++) {
+                var ch = elems[i];
+                ch.style.display = "inline-block";
+            }
+        }
+    </script>
 </body>
 </html>
